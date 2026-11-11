@@ -270,23 +270,23 @@
 <main class="game">
   <section class="home" id="homeView">
     <div class="home-card">
-      <div class="home-eyebrow">A MYTHOLOGICAL ANIMATION DEMO</div>
+      <div class="home-eyebrow">A MYTHOLOGICAL GAME</div>
       <h1>OLYMPUS REELS</h1>
-      <p class="home-copy">Explore the reels in a visual-only demo. Demo credits are simulated, have no cash value, and reset when the page reloads.</p>
-      <div class="balance-card" aria-live="polite">DEMO BALANCE<strong id="homeBalance">0.00 credits</strong>FREE DRAWS: <span id="homeFreeDraws">0</span></div>
+      <p class="home-copy">Top Up now and play the game.</p>
+      <div class="balance-card" aria-live="polite">BALANCE<strong id="homeBalance">0.00 credits</strong>FREE DRAWS: <span id="homeFreeDraws">0</span></div>
       <div class="home-actions">
-        <button class="home-action" id="playButton" type="button">PLAY DEMO</button>
-        <button class="home-action secondary-action" id="topUpButton" type="button" aria-expanded="false" aria-controls="topUpForm">ADD DEMO CREDITS</button>
+        <button class="home-action" id="playButton" type="button">PLAY</button>
+        <button class="home-action secondary-action" id="topUpButton" type="button" aria-expanded="false" aria-controls="topUpForm">ADD CREDITS</button>
         <button class="home-action secondary-action" id="payoutButton" type="button" aria-expanded="false" aria-controls="payoutPanel">PAYOUT</button>
       </div>
       <section class="payout-panel" id="payoutPanel" aria-label="Demo payout" hidden>
-        <strong>DEMO PAYOUT</strong>
-        <div>Demo credits have no cash value. No cash-out service is connected.</div>
+        <strong>PAYOUT</strong>
+        <div>No cash-out service is connected.</div>
         <button id="cashOutButton" type="button">CASH OUT NOW</button>
         <div class="payout-message" id="payoutMessage" role="status" aria-live="polite"></div>
       </section>
       <form class="qr-panel top-up-form" id="topUpForm" aria-label="Add simulated demo credits" hidden>
-        <label for="topUpAmount">Amount to add (demo credits)</label>
+        <label for="topUpAmount">Amount to add</label>
         <input id="topUpAmount" name="amount" type="number" min="0.01" step="0.01" required placeholder="e.g. 10.00">
         <button id="submitTopUp" type="submit">SHOW QR CODE</button>
         <div class="form-message" id="topUpMessage" role="status" aria-live="polite"></div>
@@ -294,11 +294,11 @@
       <section class="qr-panel" id="qrPanel" aria-label="QR top-up preview" hidden>
         <img class="qr-image" id="qrImage" src="instapay_qr.png" alt="InstaPay QR code for scanning">
         <strong>Scan to make your transfer</strong>
-        <div>After transferring, upload a payment-proof photo. The amount stays hidden until a readable photo is submitted. This demo cannot verify payments; any credits added are simulated.</div>
+        <div>After transferring, upload a payment-proof photo.</div>
         <form class="top-up-form" id="proofForm" aria-label="Upload payment proof">
           <label for="verificationPhoto">Payment proof photo</label>
           <input id="verificationPhoto" name="verificationPhoto" type="file" accept="image/*" required>
-          <div class="form-message">The photo stays in this browser and is only checked for readability. It is not reviewed or verified as payment.</div>
+          <div class="form-message">.....</div>
           <button id="confirmProofButton" type="submit">SUBMIT PROOF</button>
           <button id="cancelTopUpButton" type="button">CANCEL TOP-UP</button>
           <div class="form-message" id="proofMessage" role="status" aria-live="polite"></div>
@@ -306,7 +306,7 @@
         <div id="qrAmount" hidden></div>
         <div class="qr-file-picker">
           <label class="qr-upload-label" for="qrUpload">Preview a different QR image</label>
-          <p>Optional PNG, JPG, or WebP image. It stays in this browser session and does not process a payment.</p>
+          <p>...........</p>
           <input class="qr-upload" id="qrUpload" type="file" accept="image/png,image/jpeg,image/webp">
           <div class="form-message" id="qrUploadMessage" role="status" aria-live="polite"></div>
           <button id="resetQrButton" type="button" hidden>USE PROVIDED QR CODE</button>
@@ -321,16 +321,16 @@
   </audio>
   <header class="sky">
     <div class="multiplier">✦ OLYMPUS REELS ✦</div>
-    <div class="subhead">A MYTHOLOGICAL ANIMATION DEMO</div>
+    <div class="subhead">A MYTHOLOGICAL GAME</div>
   </header>
 
   <section class="main">
     <aside class="side-panel">
       <div class="ornament">♨</div>
       <h2>OLYMPUS</h2>
-      <p>A visual reel animation inspired by Greek mythology.</p>
-      <p>Set a demo bet for each paid draw. Each matching row pays your bet times the draw's random 0.1×–100× multiplier. All winning rows on that draw use the same multiplier, so a higher bet pays proportionally more for the same result. Get 3 scatters anywhere for 10 free draws.</p>
-      <p> <strong>No real-money bets · No prizes · No purchases</strong> </p>
+      <p>A visual roulette game inspired by Greek mythology.</p>
+      <p>Set a bet for each paid draw. Each matching row pays your bet times the draw's random 0.1×–100× multiplier. All winning rows on that draw use the same multiplier, so a higher bet pays proportionally more for the same result. Get 3 scatters anywhere for 10 free draws.</p>
+      <p> <strong>..........</strong> </p>
       <div class="ornament">♜</div>
     </aside>
 
@@ -350,17 +350,17 @@
   </section>
 
   <footer class="floor">
-    <div class="status">DISPLAY: <span id="state">READY</span><br>DEMO BALANCE: <span id="gameBalance">0.00 credits</span><br>FREE DRAWS: <span id="freeDraws">0</span></div>
+    <div class="status">DISPLAY: <span id="state">READY</span><br>BALANCE: <span id="gameBalance">0.00 credits</span><br>FREE DRAWS: <span id="freeDraws">0</span></div>
     <div class="win-display" id="winDisplay" role="status" aria-live="polite" hidden>WON THIS DRAW<strong id="winAmount"></strong><span class="win-multiplier" id="winMultiplier"></span></div>
-    <div class="message" id="message" role="status" aria-live="polite">ADD DEMO CREDITS TO SPIN</div>
-    <label class="bet-control" for="betAmount">BET (DEMO CREDITS)
+    <div class="message" id="message" role="status" aria-live="polite">ADD CREDITS TO SPIN</div>
+    <label class="bet-control" for="betAmount">BET
       <input id="betAmount" type="number" min="0.01" step="0.01" value="1.00" inputmode="decimal">
     </label>
     <button class="auto-roll" id="autoRoll" type="button" aria-pressed="false">START AUTO-ROLL</button>
     <button class="home-nav" id="homeButton" type="button">HOME</button>
     <button id="spin" aria-label="Animate reels" title="Animate reels">⟳</button>
   </footer>
-  <div class="hint">Front-end practice project • HTML + CSS + JavaScript • No wagering or payout system</div>
+  </div>
   </div>
 </main>
 
