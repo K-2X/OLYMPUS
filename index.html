@@ -365,10 +365,12 @@
 </main>
 
 <script>
-  const WIN_CHANCE_PERCENT = 100;
-  if (!Number.isFinite(WIN_CHANCE_PERCENT) || WIN_CHANCE_PERCENT < 0 || WIN_CHANCE_PERCENT > 100) {
-    throw new RangeError("WIN_CHANCE_PERCENT must be between 0 and 100.");
+  const WIN_CHANCE_PERCENT = -1;
+  if (!Number.isFinite(WIN_CHANCE_PERCENT) || WIN_CHANCE_PERCENT < -1 || WIN_CHANCE_PERCENT > 100) {
+    throw new RangeError("WIN_CHANCE_PERCENT must be between -1 and 100.");
   }
+  let forcedWinRollsRemaining = WIN_CHANCE_PERCENT === -1 ? 10 : 0;
+
   const symbols = [
     { icon: "🔱", name: "Trident" },
     { icon: "💎", name: "Gem" },
@@ -436,12 +438,22 @@
 
   function makeRoundResults() {
     const results = reels.map(() => makeReelSymbols(Math.random() < 0.12));
-    const shouldWin = Math.random() * 100 < WIN_CHANCE_PERCENT;
+
+    let shouldWin = false;
+    if (WIN_CHANCE_PERCENT === -1) {
+      shouldWin = forcedWinRollsRemaining > 0;
+      if (shouldWin) {
+        forcedWinRollsRemaining--;
+      }
+    } else {
+      shouldWin = Math.random() * 100 < WIN_CHANCE_PERCENT;
+    }
 
     if (shouldWin) {
       const winningSymbol = pickSymbol();
-      for (let column = 0; column < 3; column++) {
-        results[column][0] = winningSymbol;
+      const winningRow = Math.floor(Math.random() * 3);
+      for (let column = 0; column < results.length; column++) {
+        results[column][winningRow] = winningSymbol;
       }
       return results;
     }
